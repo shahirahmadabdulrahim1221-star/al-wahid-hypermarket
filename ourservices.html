@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Departments — Al Wahid Hyper Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar scrolled" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">AW</div>
+        <div class="brand-text"><strong>Al Wahid</strong><span>Hyper Market</span></div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="ourservices.html" class="active">Departments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" id="cartCount">0</span></button>
+        <button class="icon-btn" id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <div class="container">
+
+      <!-- Page header -->
+      <span class="eyebrow" id="pageEyebrow">Explore</span>
+      <h1 style="font-size: clamp(30px,5vw,50px); margin: 8px 0 12px;" id="pageTitle">All Departments</h1>
+      <p style="color: var(--muted); max-width: 640px;" id="pageSubtitle">
+        Every aisle of Al Wahid Hyper Market — from fresh food to electronics, curated for your family.
+      </p>
+
+      <!-- Department pills -->
+      <div class="dept-pills" id="deptPills"></div>
+
+      <!-- Category sub-filter -->
+      <div class="category-bar" id="categoryBar"></div>
+
+      <!-- Toolbar: result count + sort -->
+      <div class="shop-toolbar">
+        <div class="result-count" id="resultCount">Loading…</div>
+        <div class="sort-control">
+          <label>Sort by</label>
+          <select id="sortSelect">
+            <option value="popular">Most Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+            <option value="name">Name (A–Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product grid -->
+      <div class="product-grid" id="shopGrid"></div>
+
+      <!-- Empty state -->
+      <div class="shop-empty" id="shopEmpty" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>No products found</h3>
+        <p>Try a different department or search.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:none;">
+      <span>© 2026 Al Wahid Hyper Market. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head"><h2><i class="fa-solid fa-bag-shopping"></i> Your Cart</h2><button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot" id="cartFoot"></div>
+  </aside>
+
+  <div class="search-overlay" id="searchOverlay">
+    <button class="icon-btn search-close" id="searchClose"><i class="fa-solid fa-xmark"></i></button>
+    <input type="text" id="searchInput" placeholder="Search products, brands, categories..." />
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

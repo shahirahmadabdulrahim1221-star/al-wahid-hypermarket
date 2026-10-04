@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Al Wahid Hyper Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar scrolled" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">AW</div>
+        <div class="brand-text"><strong>Al Wahid</strong><span>Hyper Market</span></div>
+      </a>
+      <div class="nav-actions">
+        <a href="ourservices.html" class="icon-btn" title="Continue shopping"><i class="fa-solid fa-arrow-left"></i></a>
+        <button class="icon-btn" id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;">
+    <div class="container">
+      <h1 style="font-size: clamp(28px,4vw,40px); margin-bottom: 8px;">Checkout</h1>
+      <p style="color:var(--muted); margin-bottom: 32px;">Complete your order in 4 quick steps.</p>
+
+      <div class="checkout-progress">
+        <div class="checkout-progress-item active" data-step-btn="1"><span class="num">1</span> Information</div>
+        <div class="checkout-progress-item" data-step-btn="2"><span class="num">2</span> Delivery</div>
+        <div class="checkout-progress-item" data-step-btn="3"><span class="num">3</span> Payment</div>
+        <div class="checkout-progress-item" data-step-btn="4"><span class="num">4</span> Review</div>
+      </div>
+
+      <div class="checkout-wrap">
+        <div>
+          <!-- STEP 1 -->
+          <div class="checkout-step active" id="step1">
+            <h2 style="font-size:22px;margin-bottom:20px;">Customer Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="custName" placeholder="Ahmad Karimi" />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="custPhone" placeholder="+93 700 000 000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email (optional)</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="checkout-nav">
+              <a href="ourservices.html" class="btn-link">← Continue shopping</a>
+              <button class="btn btn-primary" onclick="nextStep(1)">Continue <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="checkout-step" id="step2">
+            <h2 style="font-size:22px;margin-bottom:20px;">Delivery Address</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Province</label>
+                <select>
+                  <option>Kabul</option>
+                  <option>Herat</option>
+                  <option>Balkh</option>
+                  <option>Kandahar</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>District</label>
+                <input type="text" placeholder="District 4" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Full Address</label>
+              <input type="text" id="custAddress" placeholder="Street, landmark, building..." />
+            </div>
+            <div class="form-group">
+              <label>Delivery Notes (optional)</label>
+              <textarea rows="3" placeholder="Apartment, floor, or special instructions..."></textarea>
+            </div>
+            <div class="checkout-nav">
+              <button class="btn-link" onclick="goStep(1)">← Back</button>
+              <button class="btn btn-primary" onclick="nextStep(2)">Continue <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="checkout-step" id="step3">
+            <h2 style="font-size:22px;margin-bottom:20px;">Payment Method</h2>
+            <label class="radio-card">
+              <input type="radio" name="payment" value="cod" checked />
+              <i class="fa-solid fa-money-bill-wave" style="color:var(--brand);font-size:20px;"></i>
+              <div class="rc-body"><strong>Cash on Delivery</strong><span>Pay when your order arrives</span></div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="payment" value="card" />
+              <i class="fa-solid fa-credit-card" style="color:var(--brand);font-size:20px;"></i>
+              <div class="rc-body"><strong>Debit / Credit Card</strong><span>Visa, Mastercard</span></div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="payment" value="mobile" />
+              <i class="fa-solid fa-mobile-screen" style="color:var(--brand);font-size:20px;"></i>
+              <div class="rc-body"><strong>Mobile Money</strong><span>Roshan, MTN, Etisalat</span></div>
+            </label>
+            <div class="checkout-nav">
+              <button class="btn-link" onclick="goStep(2)">← Back</button>
+              <button class="btn btn-primary" onclick="goStep(4)">Continue <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="checkout-step" id="step4">
+            <h2 style="font-size:22px;margin-bottom:20px;">Review Your Order</h2>
+            <div id="checkoutItems" style="margin-bottom:20px;"></div>
+            <div class="form-group" style="padding:16px;background:var(--muted-bg);border-radius:12px;border:1px solid var(--border);">
+              <label style="margin-bottom:8px;">Promo Code</label>
+              <div style="display:flex;gap:8px;">
+                <input type="text" placeholder="Enter code" style="flex:1;" />
+                <button class="btn btn-ghost" type="button">Apply</button>
+              </div>
+            </div>
+            <div class="checkout-nav">
+              <button class="btn-link" onclick="goStep(3)">← Back</button>
+              <button class="btn btn-primary" onclick="placeOrder()">
+                <i class="fa-solid fa-check"></i> Place Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <aside class="checkout-aside">
+          <h3>Order Summary</h3>
+          <div id="checkoutItemsSide" style="display:none;"></div>
+          <div id="checkoutSummary"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

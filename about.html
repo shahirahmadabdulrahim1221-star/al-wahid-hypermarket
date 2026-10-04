@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Al Wahid Hyper Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">AW</div>
+        <div class="brand-text"><strong>Al Wahid</strong><span>Hyper Market</span></div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="ourservices.html">Departments</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" id="cartCount">0</span></button>
+        <button class="icon-btn" id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <div class="container" style="max-width: 800px;">
+      <span class="eyebrow">Our Story</span>
+      <h1 style="font-size: clamp(32px,5vw,56px); margin: 8px 0 24px;">Bringing Kabul's best supermarket experience to your door.</h1>
+      <p style="font-size: 17px; color: var(--muted); line-height: 1.7;">
+        Al Wahid Hyper Market has been serving families across Kabul with premium groceries, fresh produce, household essentials, and everyday value. 
+        Now, we're bringing that same trusted experience online — with fast delivery, fresh guarantees, and a loyalty program that rewards every purchase.
+      </p>
+
+      <div class="trust-grid" style="margin-top: 48px; grid-template-columns: repeat(2,1fr); padding: 0;">
+        <div class="trust-item"><i class="fa-solid fa-store"></i><div><strong>4 Store Locations</strong><span>Across Kabul</span></div></div>
+        <div class="trust-item"><i class="fa-solid fa-users"></i><div><strong>50,000+ Customers</strong><span>And growing</span></div></div>
+        <div class="trust-item"><i class="fa-solid fa-box"></i><div><strong>5,000+ Products</strong><span>Everyday essentials</span></div></div>
+        <div class="trust-item"><i class="fa-solid fa-award"></i><div><strong>Since 2015</strong><span>Trusted quality</span></div></div>
+      </div>
+
+      <h2 style="margin-top: 64px; font-size: 32px;">Our Values</h2>
+      <div style="display:grid; gap:16px; margin-top: 20px;">
+        <div class="dept-card"><h3>🤝 Trust</h3><p>Every product is checked for quality before it reaches your door.</p></div>
+        <div class="dept-card"><h3>🌱 Freshness</h3><p>Produce arrives daily. If you're not satisfied, we refund — no questions.</p></div>
+        <div class="dept-card"><h3>⚡ Convenience</h3><p>Order in seconds, delivered in hours. All from your phone.</p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:none;">
+      <span>© 2026 Al Wahid Hyper Market. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head"><h2><i class="fa-solid fa-bag-shopping"></i> Your Cart</h2><button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot" id="cartFoot"></div>
+  </aside>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

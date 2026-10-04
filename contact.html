@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Al Wahid Hyper Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; gap: 14px; }
+    .contact-item i { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 12px; background: var(--brand-light); color: var(--brand); flex-shrink: 0; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: inherit; font-size: 14px; font-family: inherit; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--brand); }
+    @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">AW</div>
+        <div class="brand-text"><strong>Al Wahid</strong><span>Hyper Market</span></div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="ourservices.html">Departments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 140px;">
+    <div class="container">
+      <span class="eyebrow">Get in touch</span>
+      <h1 style="font-size: clamp(32px,5vw,56px); margin: 8px 0 12px;">Contact Us</h1>
+      <p style="color: var(--muted); max-width: 640px; margin-bottom: 40px;">Questions, feedback, or want to place a bulk order? We'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><strong>Visit our store</strong><p style="color:var(--muted);font-size:14px;">Shar-e-Naw, Kabul, Afghanistan</p></div></div>
+          <div class="contact-item"><i class="fa-solid fa-phone"></i><div><strong>Call us</strong><p style="color:var(--muted);font-size:14px;">+93 700 000 000</p></div></div>
+          <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><strong>Email us</strong><p style="color:var(--muted);font-size:14px;">hello@alwahid.af</p></div></div>
+          <div class="contact-item"><i class="fa-solid fa-clock"></i><div><strong>Opening hours</strong><p style="color:var(--muted);font-size:14px;">Daily · 8:00 AM – 11:00 PM</p></div></div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your email" required />
+          <input type="tel" placeholder="Phone number" />
+          <textarea rows="5" placeholder="Your message..." required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:none;">
+      <span>© 2026 Al Wahid Hyper Market. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

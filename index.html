@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Wahid Hyper Market — Kabul's Premium Digital Supermarket</title>
+  <meta name="description" content="Shop fresh groceries, household essentials and more from Al Wahid Hyper Market. Delivered across Kabul." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">AW</div>
+        <div class="brand-text">
+          <strong>Al Wahid</strong>
+          <span>Hyper Market</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="ourservices.html">Departments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 3D HERO ============ -->
+  <section class="hero">
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-overlay">
+      <span class="badge"><i class="fa-solid fa-sparkles"></i> Welcome to the digital Al Wahid experience</span>
+      <h1>Step inside <span class="gradient-text">Al Wahid</span></h1>
+      <p>Kabul's premium hypermarket — now in your browser. Explore departments, discover fresh products, and get everything delivered to your door.</p>
+      <div class="hero-buttons">
+        <a href="ourservices.html" class="btn btn-primary">Enter the Supermarket <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#deals" class="btn btn-ghost">Today's Deals</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item"><i class="fa-solid fa-truck-fast"></i><div><strong>Fast Delivery</strong><span>Within 2 hours in Kabul</span></div></div>
+      <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><div><strong>Fresh Guarantee</strong><span>Or your money back</span></div></div>
+      <div class="trust-item"><i class="fa-solid fa-clock"></i><div><strong>Open Daily</strong><span>8 AM – 11 PM</span></div></div>
+      <div class="trust-item"><i class="fa-solid fa-gift"></i><div><strong>Loyalty Rewards</strong><span>Earn on every order</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ DEPARTMENTS ============ -->
+  <section class="section" id="departments">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Explore</span>
+          <h2>Shop by Department</h2>
+          <p>Every aisle of Al Wahid, curated for your home.</p>
+        </div>
+        <a href="ourservices.html" class="link-arrow">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="dept-grid" id="deptGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED ============ -->
+  <section class="section section-alt" id="featured">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Curated</span>
+          <h2>Featured Products</h2>
+        </div>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ DEALS ============ -->
+  <section class="section" id="deals">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow red">Limited Time</span>
+          <h2>Today's Deals</h2>
+        </div>
+      </div>
+      <div class="product-grid" id="dealsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ NEW ARRIVALS ============ -->
+  <section class="section section-alt" id="newArrivals">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Just Landed</span>
+          <h2>New Arrivals</h2>
+        </div>
+      </div>
+      <div class="product-grid" id="newGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ LOYALTY CTA ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="loyalty-cta">
+        <span class="badge"><i class="fa-solid fa-crown"></i> Al Wahid Rewards</span>
+        <h2>Earn points on every purchase</h2>
+        <p>Join Al Wahid Rewards and unlock exclusive discounts, free delivery, and VIP experiences. Bronze → Silver → Gold → VIP.</p>
+        <a href="#" class="btn btn-white">Join Rewards <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-logo">AW</div>
+          <div class="brand-text"><strong>Al Wahid</strong><span>Hyper Market</span></div>
+        </div>
+        <p>Your premium digital supermarket experience. Fresh groceries, household essentials, and everything your family needs — delivered across Kabul.</p>
+        <div class="footer-contact">
+          <div><i class="fa-solid fa-location-dot"></i> Shar-e-Naw, Kabul, Afghanistan</div>
+          <div><i class="fa-solid fa-phone"></i> +93 700 000 000</div>
+          <div><i class="fa-solid fa-envelope"></i> hello@alwahid.af</div>
+        </div>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Departments</h4>
+        <ul>
+          <li><a href="ourservices.html">Grocery</a></li>
+          <li><a href="ourservices.html">Fresh Food</a></li>
+          <li><a href="ourservices.html">Beverages</a></li>
+          <li><a href="ourservices.html">Household</a></li>
+          <li><a href="ourservices.html">Personal Care</a></li>
+          <li><a href="ourservices.html">Electronics</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Help &amp; Support</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Loyalty Program</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Al Wahid Hyper Market. All rights reserved.</span>
+      <select class="lang-select">
+        <option>English</option>
+        <option>دری (Dari)</option>
+        <option>پښتو (Pashto)</option>
+      </select>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h2><i class="fa-solid fa-bag-shopping"></i> Your Cart</h2>
+      <button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- ============ SEARCH OVERLAY ============ -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="icon-btn search-close" id="searchClose"><i class="fa-solid fa-xmark"></i></button>
+    <input type="text" id="searchInput" placeholder="Search products, brands, categories..." />
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
